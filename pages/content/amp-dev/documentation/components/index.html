@@ -150,8 +150,8 @@ highlight_teaser:
 
       {% for category, docs in components %}
 
-        <h4 id="{{ category }}">{{ category }}</h4>
-        <div class="ap-m-table-components">
+        <div id="{{ category }}" class="ap-m-table-component">
+          <h4>{{ category }}</h4>
           {% for component in docs %}
           <a class="ap-m-table-component-link" href="{{ component.url.path }}">
             <div class="ap-m-table-component-row--components">
