@@ -55,9 +55,12 @@
 
   section {
     &.#{utility('content')} {
-      padding: 60px;
+      padding: 62px 15px;
       background-color: color('white');
       box-shadow: 0 25px 40px 0 rgba(0,0,0,0.05);
+      @media (min-width: 768px) {
+        padding: 62px;
+      }
     }
   }
   .#{utility('card-grid')} {
