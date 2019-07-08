@@ -21,14 +21,8 @@
 
 .#{molecule('teaser-highlight-guides')} {
 
-	.ap-m-teaser-container {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		align-items: start;
-		grid-column-gap: 30px;
-	}
 
-	.ap-m-teaser {
+	.#{molecule('teaser')} {
 		position: relative;
 		grid-column: span 12;
 		background-color: color('white');
@@ -54,6 +48,13 @@
 		@media (min-width: 1024px) {
 			grid-column: span 4;
 			margin: 16px 0;
+		}
+
+		&-container {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			align-items: start;
+			grid-column-gap: 30px;
 		}
 
 		&-double-teaser {
