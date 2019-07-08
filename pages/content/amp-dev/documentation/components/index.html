@@ -108,26 +108,28 @@ highlight_teaser:
 
       <hr>
 
-      {% do doc.styles.addCssFile('css/components/molecules/teaser-component.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/teaser-component-code.css') %}
       <section class="ap--section">
         <h2>Highlighted Components</h2>
         <div class="ap-m-teaser-component">
           <div class="ap-m-teaser-container">
             {% for teaser in doc.highlight_teaser %}
-            <div class="ap-m-teaser ap-m-teaser--code">
-              <div class="ap-m-teaser-card">
-                <div class="ap-m-teaser-tags">
-                  {% for tag in teaser.tags %}
-                  <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
-                  {% endfor %}
-                </div>
-                <div class="ap-m-teaser-content">
-                  <div class="ap-m-teaser-content-text">
-                    <code><span>{{ teaser.title }}</span></code>
-                    <p>{{ teaser.description }}</p>
+            <div class="ap-m-teaser ap-m-teaser-code">
+              <a href="#">
+                <div class="ap-m-teaser-card">
+                  <div class="ap-m-teaser-tags">
+                    {% for tag in teaser.tags %}
+                    <div class="ap-m-tag ap-m-tag-{{ tag }}"></div>
+                    {% endfor %}
+                  </div>
+                  <div class="ap-m-teaser-content">
+                    <div class="ap-m-teaser-content-text">
+                      <code><span>{{ teaser.title }}</span></code>
+                      <p>{{ teaser.description }}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
             {% endfor %}
           </div>
