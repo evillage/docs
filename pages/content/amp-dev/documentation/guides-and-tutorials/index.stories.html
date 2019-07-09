@@ -13,7 +13,7 @@ description: 'All resources you need to build stunning stories with AMP: Guides,
 highlight_guides:
   - title: AMPHTML Layout System
     description: The fastest way to learn is to peak over the tangible examples.
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/learn/amp-html-layout/
     tags:
     - websites
     - stories
@@ -23,7 +23,7 @@ highlight_guides:
 
   - title: Google Search guidelines for AMP pages
     description: Tips for linking AMP pages and using metadata
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/optimize-and-measure/discovery
     tags:
     - websites
     - stories
@@ -37,7 +37,7 @@ highlight_guides:
 
   - title: Create an AMPHTML ad
     description: Tips for linking AMP pages and using metadataTips for linking AMP pages and using metadata
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/learn/intro-to-amphtml-ads
     tags:
     - websites
     - stories
@@ -51,7 +51,7 @@ highlight_guides:
 
   - title: Testing CORS in AMP
     description: The fastest way to learn is to peak over the tangible examples.
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout/?format=websites
+    url: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
     tags:
     - websites
     - stories
@@ -61,7 +61,7 @@ highlight_guides:
 
   - title: Google Search guidelines for AMP pages
     description: The fastest way to learn is to peak over the tangible examples.
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/optimize-and-measure/discovery
     tags:
     - websites
     - stories
@@ -71,7 +71,7 @@ highlight_guides:
 
   - title: Testing CORS in AMP
     description: Find instructions for validation your AMP pages
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
     tags:
     - websites
     - emails
@@ -84,7 +84,7 @@ highlight_guides:
 recent_guides:
   - title: AMPHTML Layout System
     description: The fastest way to learn is to peak over the tangible examples.
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/learn/amp-html-layout/
     tags:
     - websites
     - stories
@@ -94,7 +94,7 @@ recent_guides:
 
   - title: Google Search guidelines for AMP pages
     description: Tips for linking AMP pages and using metadata
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/optimize-and-measure/discovery
     tags:
     - websites
     - stories
@@ -108,7 +108,7 @@ recent_guides:
 
   - title: Testing CORS in AMP
     description: The fastest way to learn is to peak over the tangible examples.
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout/?format=websites
+    url: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
     tags:
     - websites
     - stories
@@ -118,7 +118,7 @@ recent_guides:
 
   - title: Create an AMPHTML ad
     description: Tips for linking AMP pages and using metadataTips for linking AMP pages and using metadata
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/learn/intro-to-amphtml-ads
     tags:
     - websites
     - stories
@@ -132,7 +132,7 @@ recent_guides:
 
   - title: Google Search guidelines for AMP pages
     description: The fastest way to learn is to peak over the tangible examples.
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/optimize-and-measure/discovery
     tags:
     - websites
     - stories
@@ -142,7 +142,7 @@ recent_guides:
 
   - title: Testing CORS in AMP
     description: Find instructions for validation your AMP pages
-    url: /documentation/guides-and-tutorials/learn/amp-html-layout.html
+    url: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
     tags:
     - websites
     - emails
@@ -265,25 +265,27 @@ recent_guides:
               <amp-img class="ap--media" src="{{ guide.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ guide.image.alt }}"></amp-img>
             </div>
             {% endif %}
-            <div class="ap-m-teaser-content">
-              <div class="ap-m-teaser-content-text">
-                <h4>{{ guide.title }}</h4>
-                <p>{{ guide.description }}</p>
-              </div>
-              <div class="guide-tag">
-                <div class="guide-tag-icon guide-tag-icon--{{ guide.icon }}" >
-                  {% if guide.icon == "guide" %}
-                  {% do doc.icons.useIcon('icons/guide.svg') %}
-                  {% else %}
-                  {% do doc.icons.useIcon('icons/glasses.svg') %}
-                  {% endif %}
-                  <svg>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{guide.icon}}"></use>
-                  </svg>
+            <a href="{{ guide.url }}">
+              <div class="ap-m-teaser-content">
+                <div class="ap-m-teaser-content-text">
+                  <h4>{{ guide.title }}</h4>
+                  <p>{{ guide.description }}</p>
                 </div>
-                <span class="guide-tag-text">{{ guide.tagName }}</span>
-              </div>
+                <div class="guide-tag">
+                  <div class="guide-tag-icon guide-tag-icon--{{ guide.icon }}" >
+                    {% if guide.icon == "guide" %}
+                    {% do doc.icons.useIcon('icons/guide.svg') %}
+                    {% else %}
+                    {% do doc.icons.useIcon('icons/glasses.svg') %}
+                    {% endif %}
+                    <svg>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{guide.icon}}"></use>
+                    </svg>
+                  </div>
+                  <span class="guide-tag-text">{{ guide.tagName }}</span>
+                </div>
             </div>
+          </a>
           </div>
         </div>
         {% if loop.index is even %}
@@ -316,6 +318,7 @@ recent_guides:
               <amp-img class="ap--media" src="{{ guide.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ guide.image.alt }}"></amp-img>
             </div>
             {% endif %}
+            <a href="{{ guide.url }}">
             <div class="ap-m-teaser-content">
               <div class="ap-m-teaser-content-text">
                 <h4>{{ guide.title }}</h4>
@@ -335,6 +338,7 @@ recent_guides:
                 <span class="guide-tag-text">{{ guide.tagName }}</span>
               </div>
             </div>
+            </a>
           </div>
         </div>
         {% if loop.index is even %}
