@@ -128,8 +128,8 @@ resources_cards:
           <div class="ap--resources-overview">
             <div class="ap-o-resources-overview ap-o-resources-overview-websites" [class]="'ap-o-resources-overview ap-o-resources-overview-' + chosenFormat.activeFormat">
               {% for format in doc.resources_formats %}
-              <div class="ap-format-background ap-format-background-{{ format }}"
-                [class]="chosenFormat.activeFormat == '{{ format }}' ? 'ap-format-background ap-format-background-{{ format }} active' : 'ap-format-background ap-format-background-{{ format }}'"></div>
+              <div class="ap--format-background ap--format-background-{{ format }}"
+                [class]="chosenFormat.activeFormat == '{{ format }}' ? 'ap--format-background ap--format-background-{{ format }} active' : 'ap--format-background ap--format-background-{{ format }}'"></div>
               {% endfor %}
               <div class="ap-format-content">
                 <div class="ap-info-box">

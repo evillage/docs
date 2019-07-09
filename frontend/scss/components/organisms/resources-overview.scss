@@ -29,7 +29,7 @@
     padding: 3% 8.32%;
   }
 
-  .ap-format-background {
+   .#{utility('format-background')} {
     position: absolute;
     top: 0;
     left: 0;
