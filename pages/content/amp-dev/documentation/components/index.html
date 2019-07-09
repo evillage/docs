@@ -22,16 +22,16 @@ teaser:
 
 
 highlight_teaser:
-  - title: amp-bodymovin
+  - title: amp-bodymovin-animation
     description: A container to display an ad.
-    url: /about/ads.html
+    url: /documentation/components/amp-bodymovin-animation
     tags:
     - websites
     - email
 
   - title: amp-fx-flying-carpet
     description: Wraps its children in a unique full-screen scrolling container allowing you to display a...
-    url: /about/ads.html
+    url: /documentation/components/amp-fx-flying-carpet
     tags:
     - websites
     - stories
@@ -40,7 +40,7 @@ highlight_teaser:
 
   - title: amp-fx-collection
     description: Provides a collection of preset visual effects, such as parallax.
-    url: /about/ads.html
+    url: /documentation/components/amp-fx-collection
     tags:
     - websites
     - stories
@@ -115,7 +115,7 @@ highlight_teaser:
           <div class="ap-m-teaser-container">
             {% for teaser in doc.highlight_teaser %}
             <div class="ap-m-teaser ap-m-teaser-code">
-              <a href="#">
+              <a href="{{ teaser.url }}">
                 <div class="ap-m-teaser-card">
                   <div class="ap-m-teaser-tags">
                     {% for tag in teaser.tags %}
